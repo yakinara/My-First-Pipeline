@@ -1,5 +1,6 @@
-build laptop:
-     runs-on: ubuntu-latest
-     script:
-          - echo "Building a laptop"
-	  - echo "test"
+name: build laptop
+run-name: test build
+on: [push]
+	runs-on: ubuntu-latest
+	script:
+		- run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
