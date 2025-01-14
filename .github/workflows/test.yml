@@ -1,6 +1,12 @@
 name: build laptop
-run-name: test build
-on: [push]
-	runs-on: ubuntu-latest
-	script:
-		- run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+on: push
+jobs: 
+  build-laptop:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "Building a laptop"
+      - run: mkdir build
+      - run: touch build/computer.txt
+      - run: echo "Mainboard" >> build/computer.txt
+      - run: cat build/computer.txt
+      - run: echo "Keyboard" >> build/computer.txt
